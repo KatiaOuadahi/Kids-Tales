@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.LayoutRes;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kidstales.R;
@@ -18,17 +19,19 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
 
     private List<Story> stories;
     private Context context;
+    private int layoutResId;
 
 
-    public StoryAdapter(Context context, List<Story> stories) {
+    public StoryAdapter(Context context, List<Story> stories, @LayoutRes int layoutResId) {
         this.context = context;
         this.stories = stories;
+        this.layoutResId = layoutResId;
     }
 
     @Override
     public StoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_grid_view, parent, false);
+                .inflate(layoutResId, parent, false);
         return new StoryViewHolder(itemView);
     }
 
