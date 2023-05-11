@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kidstales.R;
-import com.example.kidstales.StoriesListActivity;
 import com.example.kidstales.model.Story;
 
 import java.util.List;
@@ -29,7 +28,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
     @Override
     public StoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_story, parent, false);
+                .inflate(R.layout.item_grid_view, parent, false);
         return new StoryViewHolder(itemView);
     }
 
