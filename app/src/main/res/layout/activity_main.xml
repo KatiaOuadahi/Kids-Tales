@@ -31,10 +31,19 @@
 
 
     <Button
-        android:id="@+id/btn_start"
+        android:id="@+id/btn_show_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Let's pick one !"
+        android:textSize="16sp"
+        android:backgroundTint="#3B8132"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/btn_show_favorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See your favorites"
         android:textSize="16sp"
         android:backgroundTint="#3B8132"
         android:layout_gravity="center_horizontal"/>
