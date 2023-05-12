@@ -7,6 +7,15 @@
     tools:context=".StoriesListActivity">
 
 
+    <Button
+        android:id="@+id/btnShowFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Favorites" />
+
+
+
+
     <ImageButton
         android:id="@+id/ib_view"
         android:layout_width="wrap_content"

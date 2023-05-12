@@ -7,12 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.kidstales.adapter.StoryAdapter;
 import com.example.kidstales.data.StoriesDataSource;
+import com.example.kidstales.model.Story;
 
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class StoriesListActivity extends AppCompatActivity {
@@ -36,6 +39,36 @@ public class StoriesListActivity extends AppCompatActivity {
         });
 
         setGridView(); // Set initial view as grid view
+
+
+
+
+
+        // Inside the onCreate method of StoriesListActivity
+        Button btnShowFavorites = findViewById(R.id.btnShowFavorites);
+        btnShowFavorites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create a separate list to hold the favorite stories
+                List<Story> favoriteStories = new ArrayList<>();
+
+                // Filter the stories based on the isFavorite field
+                for (Story story : StoriesDataSource.getStories()) {
+                    if (story.isFavorite()) {
+                        favoriteStories.add(story);
+                    }
+                }
+
+                // Update the RecyclerView's adapter with the filtered list
+                StoryAdapter adapter = new StoryAdapter(StoriesListActivity.this, favoriteStories, R.layout.item_grid_view);
+                recyclerView.setAdapter(adapter);
+            }
+        });
+
+
+
+
+
     }
 
     private void setGridView() {
