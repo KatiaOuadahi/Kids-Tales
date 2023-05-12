@@ -7,12 +7,16 @@
     tools:context=".StoriesListActivity">
 
 
-    <Button
-        android:id="@+id/btnShowFavorites"
+    <ImageButton
+        android:id="@+id/ibShowFavorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show Favorites" />
-
+        android:src="@drawable/ic_show_favorites"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ib_view"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="?android:attr/selectableItemBackground" />
 
 
 

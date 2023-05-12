@@ -45,8 +45,8 @@ public class StoriesListActivity extends AppCompatActivity {
 
 
         // Inside the onCreate method of StoriesListActivity
-        Button btnShowFavorites = findViewById(R.id.btnShowFavorites);
-        btnShowFavorites.setOnClickListener(new View.OnClickListener() {
+        ImageButton ibShowFavorites = findViewById(R.id.ibShowFavorites);
+        ibShowFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Create a separate list to hold the favorite stories
