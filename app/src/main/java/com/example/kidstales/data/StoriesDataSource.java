@@ -6,7 +6,7 @@ import com.example.kidstales.model.Story;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataSource {
+public class StoriesDataSource {
     private static List<Story> stories;
 
     public static List<Story> getStories() {

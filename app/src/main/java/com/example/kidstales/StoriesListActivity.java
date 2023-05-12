@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.kidstales.adapter.StoryAdapter;
-import com.example.kidstales.data.DataSource;
+import com.example.kidstales.data.StoriesDataSource;
 
 
 
@@ -40,7 +40,7 @@ public class StoriesListActivity extends AppCompatActivity {
 
     private void setGridView() {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        StoryAdapter adapter = new StoryAdapter(this, DataSource.getStories(), R.layout.item_grid_view);
+        StoryAdapter adapter = new StoryAdapter(this, StoriesDataSource.getStories(), R.layout.item_grid_view);
         recyclerView.setAdapter(adapter);
         isGridView = true;
         viewButton.setImageResource(R.drawable.ic_list_view); // Set icon to list view
@@ -48,7 +48,7 @@ public class StoriesListActivity extends AppCompatActivity {
 
     private void setListView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        StoryAdapter adapter = new StoryAdapter(this, DataSource.getStories(), R.layout.item_vertical_view);
+        StoryAdapter adapter = new StoryAdapter(this, StoriesDataSource.getStories(), R.layout.item_vertical_view);
         recyclerView.setAdapter(adapter);
         isGridView = false;
         viewButton.setImageResource(R.drawable.ic_grid_view); // Set icon to grid view
