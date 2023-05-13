@@ -32,8 +32,10 @@
 
     <Button
         android:id="@+id/btn_show_all"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
         android:text="Let's pick one !"
         android:textSize="16sp"
         android:backgroundTint="#3B8132"
@@ -41,8 +43,10 @@
 
     <Button
         android:id="@+id/btn_show_favorites"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
         android:text="See your favorites"
         android:textSize="16sp"
         android:backgroundTint="#3B8132"
