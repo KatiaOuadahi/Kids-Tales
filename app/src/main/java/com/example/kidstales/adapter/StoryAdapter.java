@@ -23,18 +23,20 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
     private List<Story> stories;
     private Context context;
     private int layoutResId;
+    private boolean isFavoriteActivity;
 
-    public StoryAdapter(Context context, List<Story> stories, @LayoutRes int layoutResId) {
+    public StoryAdapter(Context context, List<Story> stories, @LayoutRes int layoutResId, boolean isFavoriteActivity) {
         this.context = context;
         this.stories = stories;
         this.layoutResId = layoutResId;
+        this.isFavoriteActivity = isFavoriteActivity;
     }
 
     @Override
     public StoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(layoutResId, parent, false);
-        return new StoryViewHolder(itemView, stories);
+        return new StoryViewHolder(itemView, stories, isFavoriteActivity);
     }
 
     @Override
@@ -62,37 +64,42 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         ImageButton favoriteButton;
         List<Story> stories;
 
-        public StoryViewHolder(View itemView, List<Story> stories) {
+        public StoryViewHolder(View itemView, List<Story> stories , boolean isFavoriteActivity) {
             super(itemView);
             imageView = itemView.findViewById(R.id.iv_storyCover);
             titleTextView = itemView.findViewById(R.id.tv_storyTitle);
             favoriteButton = itemView.findViewById(R.id.ib_favorite);
             this.stories = stories;
 
-            // Implement a click listener for the favorite ImageButton
-            favoriteButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION) {
-                        // Get the corresponding story
-                        Story story = stories.get(position);
 
-                        // Toggle the isFavorite field
-                        boolean isFavorite = story.isFavorite();
-                        story.setFavorite(!isFavorite);
+            if (isFavoriteActivity) {
+                favoriteButton.setVisibility(View.GONE); // Hide the favorite ImageButton
+            } else{
+                // Implement a click listener for the favorite ImageButton
+                favoriteButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            // Get the corresponding story
+                            Story story = stories.get(position);
 
-                        // Update the ImageButton's icon based on the isFavorite field
-                        if (story.isFavorite()) {
-                            favoriteButton.setImageResource(R.drawable.ic_heart_filled);
-                            FavoritesManager.getInstance().addFavoriteStory(story); // Add the story to favorites
-                        } else {
-                            favoriteButton.setImageResource(R.drawable.ic_heart_outline);
-                            FavoritesManager.getInstance().removeFavoriteStory(story); // Remove the story from favorites
+                            // Toggle the isFavorite field
+                            boolean isFavorite = story.isFavorite();
+                            story.setFavorite(!isFavorite);
+
+                            // Update the ImageButton's icon based on the isFavorite field
+                            if (story.isFavorite()) {
+                                favoriteButton.setImageResource(R.drawable.ic_heart_filled);
+                                FavoritesManager.getInstance().addFavoriteStory(story); // Add the story to favorites
+                            } else {
+                                favoriteButton.setImageResource(R.drawable.ic_heart_outline);
+                                FavoritesManager.getInstance().removeFavoriteStory(story); // Remove the story from favorites
+                            }
                         }
                     }
-                }
-            });
+                });
+        }
         }
     }
 }
