@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-       Button showAll = findViewById(R.id.btn_show_all);
+        Button showAll = findViewById(R.id.btn_show_all);
 
 
         //move to StoriesListActiviy when the btn_show_all button is clicked

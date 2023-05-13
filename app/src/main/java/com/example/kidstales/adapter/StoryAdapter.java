@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kidstales.R;
 import com.example.kidstales.model.Story;
+import com.example.kidstales.utils.FavoritesManager;
 
 import java.util.List;
 
@@ -22,7 +23,6 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
     private List<Story> stories;
     private Context context;
     private int layoutResId;
-
 
     public StoryAdapter(Context context, List<Story> stories, @LayoutRes int layoutResId) {
         this.context = context;
@@ -56,7 +56,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         return stories.size();
     }
 
-    public static class StoryViewHolder extends RecyclerView.ViewHolder {
+    public class StoryViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView titleTextView;
         ImageButton favoriteButton;
@@ -85,8 +85,10 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
                         // Update the ImageButton's icon based on the isFavorite field
                         if (story.isFavorite()) {
                             favoriteButton.setImageResource(R.drawable.ic_heart_filled);
+                            FavoritesManager.getInstance().addFavoriteStory(story); // Add the story to favorites
                         } else {
                             favoriteButton.setImageResource(R.drawable.ic_heart_outline);
+                            FavoritesManager.getInstance().removeFavoriteStory(story); // Remove the story from favorites
                         }
                     }
                 }

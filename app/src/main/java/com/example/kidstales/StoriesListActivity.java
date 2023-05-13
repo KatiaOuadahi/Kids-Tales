@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import com.example.kidstales.adapter.StoryAdapter;
 import com.example.kidstales.data.StoriesDataSource;
 import com.example.kidstales.model.Story;
+import com.example.kidstales.utils.FavoritesManager;
 
 import java.util.ArrayList;
 import java.util.List;
