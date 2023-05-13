@@ -97,9 +97,12 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
                                 FavoritesManager.getInstance().removeFavoriteStory(story); // Remove the story from favorites
                             }
                         }
+                      }
+                                                                    });
                     }
-                });
         }
-        }
+
+
+
     }
 }
