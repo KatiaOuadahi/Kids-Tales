@@ -15,7 +15,6 @@
         android:src="@drawable/ic_arrow_back"
         android:background="?android:attr/selectableItemBackground"
         android:padding="8dp"
-        android:onClick="onIbClicked"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
@@ -53,7 +52,6 @@
         android:src="@drawable/ic_grid_view"
         android:background="?android:attr/selectableItemBackground"
         android:padding="8dp"
-        android:onClick="onIbClicked"
         app:layout_constraintTop_toTopOf="@id/ib_backToMain"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="16dp" />
