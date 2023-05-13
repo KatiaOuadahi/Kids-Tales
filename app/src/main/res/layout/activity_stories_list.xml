@@ -8,6 +8,30 @@
 
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available Tales"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ib_view"
+        app:layout_constraintTop_toTopOf="@id/ib_view" />
+
+
+
+    <ImageButton
+        android:id="@+id/ib_ShowFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_show_favorites"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ib_view"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="?android:attr/selectableItemBackground" />
+
 
     <ImageButton
         android:id="@+id/ib_view"
