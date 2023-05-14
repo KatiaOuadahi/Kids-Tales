@@ -18,13 +18,13 @@ public class StoriesDataSource {
 
     private static void generateStories() {
         stories = new ArrayList<>();
-        stories.add(new Story(R.drawable.story1_page1, "The Ant and The Grasshopper"));
-        stories.add(new Story(R.drawable.story2_page2, "The Boy Who Cried Wolf"));
-        stories.add(new Story(R.drawable.story3_page4, "The Ugly Duckling"));
-        stories.add(new Story(R.drawable.story4_page3, "The Hare And The Tortoise"));
-        stories.add(new Story(R.drawable.story5_page1, "The Little Red Riding Hood"));
-        stories.add(new Story(R.drawable.story6_page1, "The Monkeys and The Cap Seller"));
-        stories.add(new Story(R.drawable.story7_page2, "The Golden Egg"));
-        stories.add(new Story(R.drawable.story8_page1, "The Cows And The Tiger"));
+        stories.add(new Story(R.drawable.story1_page1, R.string.title1));
+        stories.add(new Story(R.drawable.story2_page2, R.string.title2));
+        stories.add(new Story(R.drawable.story3_page4, R.string.title3));
+        stories.add(new Story(R.drawable.story4_page3, R.string.title4));
+        stories.add(new Story(R.drawable.story5_page1, R.string.title5));
+        stories.add(new Story(R.drawable.story6_page1, R.string.title6));
+        stories.add(new Story(R.drawable.story7_page2, R.string.title7));
+        stories.add(new Story(R.drawable.story8_page1, R.string.title8));
     }
 }

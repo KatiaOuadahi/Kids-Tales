@@ -28,9 +28,7 @@ public class FavoritesManager {
     }
 
     public void addFavoriteStory(Story story) {
-        Log.d(MY_TAG, "Before adding favorite story: " + story.getTitle());
         favoriteStories.add(story);
-        Log.d(MY_TAG, "Added favorite story: " + story.getTitle());
     }
 
     public void removeFavoriteStory(Story story) {

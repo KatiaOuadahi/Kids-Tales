@@ -43,7 +43,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
     public void onBindViewHolder(StoryViewHolder holder, int position) {
         Story story = stories.get(position);
         holder.imageView.setImageResource(story.getCoverImage());
-        holder.titleTextView.setText(story.getTitle());
+        holder.titleTextView.setText(story.getTitleResourceId());
 
         // Update the favorite ImageButton's icon based on the isFavorite field
         if (story.isFavorite()) {

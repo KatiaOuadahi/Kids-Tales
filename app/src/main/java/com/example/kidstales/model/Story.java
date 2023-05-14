@@ -2,12 +2,12 @@ package com.example.kidstales.model;
 
 public class Story {
     private int imageResource;
-    private String title;
+    private int titleResourceId;
     private boolean isFavorite;
 
-    public Story(int imageResource, String title) {
+    public Story(int imageResource, int  titleResourceId) {
         this.imageResource = imageResource;
-        this.title = title;
+        this.titleResourceId = titleResourceId;
         this.isFavorite = false; // Initialize isFavorite to false for all stories
     }
 
@@ -15,9 +15,7 @@ public class Story {
         return imageResource;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    public int getTitleResourceId() {return titleResourceId; }
 
     public boolean isFavorite() {
         return isFavorite;
