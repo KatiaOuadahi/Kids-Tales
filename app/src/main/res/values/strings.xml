@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Kid\'s Tales</string>
+
+    //stories_titles
+    <string name="title1">The Hare and the Tortoise</string>
+    <string name="title2">The greedy dog</string>
+    <string name="title3">The Thirsty Crow</string>
+    <string name="title4">The Fox and The Grapes</string>
+    <string name="title5">The Ant and The Grasshopper</string>
+    <string name="title6">The Boy Who Cried Wolf</string>
+    <string name="title7">The Ugly Duckling</string>
+    <string name="title8">The Elephant and the Ants</string>
+
 </resources>
