@@ -20,7 +20,7 @@
         android:text="Swipe To The Next Imgae"
         android:layout_marginBottom="40dp"
         android:textSize="20dp"
-
+        android:textAppearance= "?attr/textAppearanceHeadline6"
         />
 
 

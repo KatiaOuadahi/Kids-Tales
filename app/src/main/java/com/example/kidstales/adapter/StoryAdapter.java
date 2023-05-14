@@ -1,7 +1,5 @@
 package com.example.kidstales.adapter;
 
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -11,18 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.LayoutRes;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.kidstales.MainActivity;
 import com.example.kidstales.R;
 import com.example.kidstales.ScenesActivity;
-import com.example.kidstales.StoriesListActivity;
+import com.example.kidstales.model.Scene;
 import com.example.kidstales.model.Story;
 import com.example.kidstales.utils.FavoritesManager;
 import com.google.android.material.card.MaterialCardView;
+import com.google.gson.Gson;
+
 
 import java.util.List;
 
@@ -77,13 +73,25 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         holder.imageView.setImageResource(story.getCoverImage());
         holder.titleTextView.setText(story.getTitle());
 
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Start the SceneActivity and pass the selected story as extra
+
+               /* Intent intent = new Intent(v.getContext(), ScenesActivity.class);
+                intent.putExtra("Story", story);
+                List<Scene> myScenes = story.getScenes();
+                //intent.putExtra("MyScenes", myScenes);
+                v.getContext().startActivity(intent);*/
+
+                Gson gson = new Gson();
+                String storyJson = gson.toJson(story);
                 Intent intent = new Intent(v.getContext(), ScenesActivity.class);
-                intent.putExtra("story", story);
+                intent.putExtra("Story", storyJson);
                 v.getContext().startActivity(intent);
+
+                Log.d("MY_TAG_Adapter","the first scence is:"+story.getScenes().get(0).getText());
             }
         });
 

@@ -13,7 +13,9 @@ public class Scene {
         return backgroundResourceId;
     }
 
-    public String getTextToRead() {
+
+    public String getText() {
         return textToRead;
     }
+
 }
