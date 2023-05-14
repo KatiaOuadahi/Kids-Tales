@@ -14,7 +14,7 @@
 
     //FavoritesActivity strings
     <string name="yourFav">Your Favorites</string>
-    <string name="noFav">You did not add any favorites tales</string>
+    <string name="noFav">You have not set any favorite tale !</string>
 
 
 
