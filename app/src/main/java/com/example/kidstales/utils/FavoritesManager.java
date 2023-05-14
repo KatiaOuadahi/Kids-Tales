@@ -1,16 +1,13 @@
 package com.example.kidstales.utils;
 
-import android.util.Log;
-
 import com.example.kidstales.model.Story;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FavoritesManager {
-    private static final String MY_TAG = "FavoritesManager";
     private static FavoritesManager instance;
-    private List<Story> favoriteStories;
+    private final List<Story> favoriteStories;
 
     private FavoritesManager() {
         favoriteStories = new ArrayList<>();
