@@ -1,15 +1,15 @@
 package com.example.kidstales.model;
 import java.util.List;
 
-public class Story{
+public class Story {
     private int imageResource;
-    private String title;
+    private int titleResourceId;
     private boolean isFavorite;
     private List<Scene> scenes;
 
-    public Story(int imageResource, String title ,List<Scene> scenes) {
+    public Story(int imageResource, String titleResourceId ,List<Scene> scenes) {
         this.imageResource = imageResource;
-        this.title = title;
+        this.titleResourceId = titleResourceId;
         this.isFavorite = false; // Initialize isFavorite to false for all stories
         this.scenes = scenes;
     }
@@ -18,9 +18,7 @@ public class Story{
         return imageResource;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    public int getTitleResourceId() {return titleResourceId; }
 
     public boolean isFavorite() {
         return isFavorite;

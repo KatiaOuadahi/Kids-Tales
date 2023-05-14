@@ -38,18 +38,15 @@ public class StoriesDataSource {
         generateScenesOfStory07();
         generateScenesOfStory08();
         stories = new ArrayList<>();
-        stories.add(new Story(R.drawable.story1_cover, "The Ant and The Grasshopper",ScenesOfStory01));
-        stories.add(new Story(R.drawable.story2_cover, "The Boy Who Cried Wolf",ScenesOfStory02));
-        stories.add(new Story(R.drawable.story3_cover, "The Ugly Duckling",ScenesOfStory03));
-        stories.add(new Story(R.drawable.story4_cover, "The Hare And The Tortoise",ScenesOfStory04));
-        stories.add(new Story(R.drawable.story5_cover, "The greedy dog",ScenesOfStory05));
-        stories.add(new Story(R.drawable.story6_cover, "The Thirsty Crow",ScenesOfStory06));
-        stories.add(new Story(R.drawable.story7_cover, "The Fox and The Grapes",ScenesOfStory07));
-        stories.add(new Story(R.drawable.story8_cover, "The Elephant and the Ants",ScenesOfStory08));
+        stories.add(new Story(R.drawable.story1_page1, R.string.title1,ScenesOfStory01));
+        stories.add(new Story(R.drawable.story2_page2, R.string.title2,ScenesOfStory02));
+        stories.add(new Story(R.drawable.story3_page4, R.string.title3,ScenesOfStory03));
+        stories.add(new Story(R.drawable.story4_page3, R.string.title4,ScenesOfStory04));
+        stories.add(new Story(R.drawable.story5_page1, R.string.title5,ScenesOfStory05));
+        stories.add(new Story(R.drawable.story6_page1, R.string.title6,ScenesOfStory06));
+        stories.add(new Story(R.drawable.story7_page2, R.string.title7,ScenesOfStory07));
+        stories.add(new Story(R.drawable.story8_page1, R.string.title8,ScenesOfStory08));
     }
-
-
-
     private static void generateScenesOfStory01(){
         ScenesOfStory01=new ArrayList<>();
         ScenesOfStory01.add(new Scene(R.drawable.story1_cover,"The ant and the grasshopper were good friends. \n" +
@@ -136,4 +133,5 @@ public class StoriesDataSource {
         ScenesOfStory08.add(new Scene(R.drawable.story8_cover,"The elephant could only howl in pain. \n"));
         ScenesOfStory08.add(new Scene(R.drawable.story8_cover,"He realized his mistake and apologized to the ants and all the animals he bullied.\n"));
     }
+
 }

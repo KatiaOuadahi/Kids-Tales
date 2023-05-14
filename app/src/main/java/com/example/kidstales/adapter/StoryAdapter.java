@@ -1,5 +1,6 @@
 package com.example.kidstales.adapter;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -9,8 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.LayoutRes;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.kidstales.R;
 import com.example.kidstales.ScenesActivity;
 import com.example.kidstales.model.Scene;
@@ -36,42 +39,18 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         this.isFavoriteActivity = isFavoriteActivity;
     }
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public StoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(layoutResId, parent, false);
-
-        StoryViewHolder viewHolder = new StoryViewHolder(itemView, stories, isFavoriteActivity);
-        // Add a click listener to the card view
-        /*itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int position = viewHolder.getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-                    // Get the corresponding story
-                    Story story = stories.get(position);
-                    String selectedStory =story.getTitle();
-                    Log.d("MY_TAG","you selected this story :"+selectedStory);
-                    Intent intent = new Intent(v.getContext(), ScenesActivity.class);
-                    intent.putExtra("Story", selectedStory);
-                    v.getContext().startActivity(intent);
-                }
-            }
-        });*/
-
-
-
-        return viewHolder;
-
+        return new StoryViewHolder(itemView, stories, isFavoriteActivity);
     }
-////////////////////////////////////////////////////////////////////////////////////////////////
+
     @Override
     public void onBindViewHolder(StoryViewHolder holder, int position) {
         Story story = stories.get(position);
         holder.imageView.setImageResource(story.getCoverImage());
-        holder.titleTextView.setText(story.getTitle());
+        holder.titleTextView.setText(story.getTitleResourceId());
 
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -79,11 +58,6 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
             public void onClick(View v) {
                 // Start the SceneActivity and pass the selected story as extra
 
-               /* Intent intent = new Intent(v.getContext(), ScenesActivity.class);
-                intent.putExtra("Story", story);
-                List<Scene> myScenes = story.getScenes();
-                //intent.putExtra("MyScenes", myScenes);
-                v.getContext().startActivity(intent);*/
 
                 Gson gson = new Gson();
                 String storyJson = gson.toJson(story);
@@ -117,7 +91,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         List<Story> stories;
         MaterialCardView cardView;
 
-        public StoryViewHolder(View itemView, List<Story> stories , boolean isFavoriteActivity) {
+        public StoryViewHolder(View itemView, List<Story> stories, boolean isFavoriteActivity) {
             super(itemView);
             imageView = itemView.findViewById(R.id.iv_storyCover);
             titleTextView = itemView.findViewById(R.id.tv_storyTitle);
@@ -128,7 +102,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
 
             if (isFavoriteActivity) {
                 favoriteButton.setVisibility(View.GONE); // Hide the favorite ImageButton
-            } else{
+            } else {
                 // Implement a click listener for the favorite ImageButton
                 favoriteButton.setOnClickListener(new View.OnClickListener() {
                     @Override

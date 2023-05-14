@@ -1,17 +1,16 @@
 package com.example.kidstales;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kidstales.adapter.StoryAdapter;
 import com.example.kidstales.model.Story;
@@ -23,7 +22,7 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-    private TextView textView;
+    private LinearLayout linearLayout;
     private ImageButton viewButton;
     private boolean isGridView = true;
     private List<Story> favoriteStories;
@@ -36,7 +35,8 @@ public class FavoritesActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.grid_recycler_view);
         viewButton = findViewById(R.id.ib_view);
-        textView = findViewById(R.id.tv_noFavorites);
+        linearLayout = findViewById(R.id.ll_noFavorites);
+
 
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,18 +51,16 @@ public class FavoritesActivity extends AppCompatActivity {
         Log.d("MY_TAG_FavoritesActivity", "Favorite stories size: " + favoriteStories.size());
 
 
-
         if (favoriteStories.isEmpty()) {
-            textView.setVisibility(View.VISIBLE);
+            linearLayout.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.GONE);
         } else {
-            textView.setVisibility(View.GONE);
+            linearLayout.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
 
 
             setGridView(); // Set initial view as grid view
         }
-
 
 
         ImageButton backToStoriesList = findViewById(R.id.ib_backToStoriesList);
