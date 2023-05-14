@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -60,6 +62,19 @@ public class FavoritesActivity extends AppCompatActivity {
 
             setGridView(); // Set initial view as grid view
         }
+
+
+
+        ImageButton backToStoriesList = findViewById(R.id.ib_backToStoriesList);
+        //move to StoriesListActiviy when  ib_backToStoriesList  is clicked
+        backToStoriesList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FavoritesActivity.this, StoriesListActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void setGridView() {
