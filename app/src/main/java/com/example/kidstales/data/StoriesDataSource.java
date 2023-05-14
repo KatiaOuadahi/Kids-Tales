@@ -27,4 +27,5 @@ public class StoriesDataSource {
         stories.add(new Story(R.drawable.story7_page2, R.string.title7));
         stories.add(new Story(R.drawable.story8_page1, R.string.title8));
     }
+
 }
