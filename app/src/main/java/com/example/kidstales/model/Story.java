@@ -1,8 +1,7 @@
 package com.example.kidstales.model;
-
 import java.util.List;
 
-public class Story {
+public class Story{
     private int imageResource;
     private String title;
     private boolean isFavorite;
@@ -31,4 +30,6 @@ public class Story {
         isFavorite = favorite;
     }
     public List<Scene> getScenes() { return scenes; }
+
+
 }

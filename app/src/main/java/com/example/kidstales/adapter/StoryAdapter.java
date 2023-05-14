@@ -1,7 +1,10 @@
 package com.example.kidstales.adapter;
 
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +13,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.LayoutRes;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kidstales.MainActivity;
 import com.example.kidstales.R;
+import com.example.kidstales.ScenesActivity;
+import com.example.kidstales.StoriesListActivity;
 import com.example.kidstales.model.Story;
 import com.example.kidstales.utils.FavoritesManager;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;
 
@@ -32,18 +40,54 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         this.isFavoriteActivity = isFavoriteActivity;
     }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public StoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(layoutResId, parent, false);
-        return new StoryViewHolder(itemView, stories, isFavoriteActivity);
-    }
 
+        StoryViewHolder viewHolder = new StoryViewHolder(itemView, stories, isFavoriteActivity);
+        // Add a click listener to the card view
+        /*itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = viewHolder.getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    // Get the corresponding story
+                    Story story = stories.get(position);
+                    String selectedStory =story.getTitle();
+                    Log.d("MY_TAG","you selected this story :"+selectedStory);
+                    Intent intent = new Intent(v.getContext(), ScenesActivity.class);
+                    intent.putExtra("Story", selectedStory);
+                    v.getContext().startActivity(intent);
+                }
+            }
+        });*/
+
+
+
+        return viewHolder;
+
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public void onBindViewHolder(StoryViewHolder holder, int position) {
         Story story = stories.get(position);
         holder.imageView.setImageResource(story.getCoverImage());
         holder.titleTextView.setText(story.getTitle());
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start the SceneActivity and pass the selected story as extra
+                Intent intent = new Intent(v.getContext(), ScenesActivity.class);
+                intent.putExtra("story", story);
+                v.getContext().startActivity(intent);
+            }
+        });
+
+
 
         // Update the favorite ImageButton's icon based on the isFavorite field
         if (story.isFavorite()) {
@@ -63,12 +107,14 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         TextView titleTextView;
         ImageButton favoriteButton;
         List<Story> stories;
+        MaterialCardView cardView;
 
         public StoryViewHolder(View itemView, List<Story> stories , boolean isFavoriteActivity) {
             super(itemView);
             imageView = itemView.findViewById(R.id.iv_storyCover);
             titleTextView = itemView.findViewById(R.id.tv_storyTitle);
             favoriteButton = itemView.findViewById(R.id.ib_favorite);
+            cardView = itemView.findViewById(R.id.Story_card);
             this.stories = stories;
 
 
