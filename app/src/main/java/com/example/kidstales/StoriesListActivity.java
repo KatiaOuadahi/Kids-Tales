@@ -1,24 +1,17 @@
 package com.example.kidstales;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-
 import com.example.kidstales.adapter.StoryAdapter;
 import com.example.kidstales.data.StoriesDataSource;
-import com.example.kidstales.model.Story;
-import com.example.kidstales.utils.FavoritesManager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class StoriesListActivity extends AppCompatActivity {
