@@ -8,13 +8,13 @@
 
 
     <TextView
-        android:id="@+id/tv_welcome"
+        android:id="@+id/tv_hi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="30dp"
-        android:text="Hi ! Do you want to read a tale ?"
+        android:text="@string/hi_text"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="35sp"
@@ -32,7 +32,7 @@
         android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_welcome"
+        app:layout_constraintTop_toBottomOf="@id/tv_hi"
         app:srcCompat="@drawable/kidreading" />
 
     <Button
@@ -44,7 +44,7 @@
         android:layout_marginEnd="70dp"
         android:background="@drawable/rounded_button"
         android:backgroundTint="#459849"
-        android:text="Let's pick one !"
+        android:text="@string/letsPickOne"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,18 +57,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Kids Tales"
+        android:text="@string/kidsTales"
         android:textAppearance="?attr/textAppearanceHeadline6"
-        app:layout_constraintBottom_toTopOf="@id/tv_description"
+        app:layout_constraintBottom_toTopOf="@id/tv_def"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tv_description"
+        android:id="@+id/tv_def"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Inspiring Young Minds, One Tale at a Time"
+        android:text="@string/def_text"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,6 +1,23 @@
 <resources>
     <string name="app_name">Kid\'s Tales</string>
 
+
+    //MainActivity strings
+    <string name="hi_text">Hi ! Do you want to read a tale ?</string>
+    <string name="letsPickOne">Let\'s pick one !</string>
+    <string name="kidsTales">Kids Tales</string>
+    <string name="def_text">Inspiring Young Minds, One Tale at a Time</string>
+
+    //StoriesListActivity strings
+    <string name="availble">Available Tales</string>
+
+
+    //FavoritesActivity strings
+    <string name="yourFav">Your Favorites</string>
+    <string name="noFav">You did not add any favorites tales</string>
+
+
+
     //stories_titles
     <string name="title1">The Hare and the Tortoise</string>
     <string name="title2">The greedy dog</string>
