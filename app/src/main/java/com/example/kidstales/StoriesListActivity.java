@@ -2,7 +2,6 @@ package com.example.kidstales;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,34 +26,23 @@ public class StoriesListActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.grid_recycler_view);
         viewButton = findViewById(R.id.ib_view);
-        viewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toggleView();
-            }
-        });
+        viewButton.setOnClickListener(v -> toggleView());
 
         setGridView(); // Set initial view as grid view
 
 
         ImageButton showFavorites = findViewById(R.id.ib_ShowFavorites);
         //move to StoriesListActiviy when the btn_show_all button is clicked
-        showFavorites.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StoriesListActivity.this, FavoritesActivity.class);
-                startActivity(intent);
-            }
+        showFavorites.setOnClickListener(v -> {
+            Intent intent = new Intent(StoriesListActivity.this, FavoritesActivity.class);
+            startActivity(intent);
         });
 
         ImageButton backToMain = findViewById(R.id.ib_backToMain);
         //move to mainActivity when ib_backToMain is clicked
-        backToMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StoriesListActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
+        backToMain.setOnClickListener(v -> {
+            Intent intent = new Intent(StoriesListActivity.this, MainActivity.class);
+            startActivity(intent);
         });
 
 
