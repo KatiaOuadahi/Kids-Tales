@@ -64,7 +64,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         ImageButton favoriteButton;
         List<Story> stories;
 
-        public StoryViewHolder(View itemView, List<Story> stories , boolean isFavoriteActivity) {
+        public StoryViewHolder(View itemView, List<Story> stories, boolean isFavoriteActivity) {
             super(itemView);
             imageView = itemView.findViewById(R.id.iv_storyCover);
             titleTextView = itemView.findViewById(R.id.tv_storyTitle);
@@ -74,7 +74,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
 
             if (isFavoriteActivity) {
                 favoriteButton.setVisibility(View.GONE); // Hide the favorite ImageButton
-            } else{
+            } else {
                 // Implement a click listener for the favorite ImageButton
                 favoriteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -99,7 +99,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
                         }
                     }
                 });
-        }
+            }
         }
     }
 }

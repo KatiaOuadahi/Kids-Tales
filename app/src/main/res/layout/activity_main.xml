@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
-
-
 
 
     <TextView
         android:id="@+id/tv_welcome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
         android:layout_marginTop="120dp"
+        android:layout_marginEnd="30dp"
         android:text="Hi ! Do you want to read a tale ?"
-        android:textStyle="bold"
-        android:textSize="35sp"
+        android:textAlignment="center"
         android:textColor="#000000"
-        android:textAlignment="center"/>
-
-
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
@@ -43,41 +39,41 @@
         android:id="@+id/btn_show_all"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_kidReading"
         android:layout_marginStart="70dp"
-        android:layout_marginEnd="70dp"
         android:layout_marginTop="20dp"
-        android:text="Let's pick one !"
-        android:textSize="20sp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/rounded_button"
         android:backgroundTint="#459849"
+        android:text="Let's pick one !"
         android:textColor="#000000"
-        android:background="@drawable/rounded_button" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_kidReading" />
 
 
     <TextView
         android:id="@+id/tv_kidsTales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/tv_description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
         android:text="Kids Tales"
-        android:textAppearance="?attr/textAppearanceHeadline6"/>
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        app:layout_constraintBottom_toTopOf="@id/tv_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
+        android:text="Inspiring Young Minds, One Tale at a Time"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="Inspiring Young Minds, One Tale at a Time" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

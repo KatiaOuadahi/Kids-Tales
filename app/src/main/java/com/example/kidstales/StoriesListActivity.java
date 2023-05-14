@@ -44,8 +44,6 @@ public class StoriesListActivity extends AppCompatActivity {
         setGridView(); // Set initial view as grid view
 
 
-
-
         ImageButton showFavorites = findViewById(R.id.ib_ShowFavorites);
         //move to StoriesListActiviy when the btn_show_all button is clicked
         showFavorites.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +63,6 @@ public class StoriesListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
 
     }
