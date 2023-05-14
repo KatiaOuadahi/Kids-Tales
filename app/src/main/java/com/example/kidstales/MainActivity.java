@@ -29,21 +29,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-        Button showFavorites = findViewById(R.id.btn_show_favorites);
-
-
-        //move to StoriesListActiviy when the btn_show_all button is clicked
-        showFavorites.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FavoritesActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-
     }
 }

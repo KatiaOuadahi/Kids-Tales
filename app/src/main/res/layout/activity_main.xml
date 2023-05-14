@@ -8,24 +8,25 @@
     tools:context=".MainActivity">
 
 
+
     <TextView
         android:id="@+id/tv_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Wanna read a tale ?"
+        android:text="Hi , do you want to read a tale ?"
         android:textAppearance= "?attr/textAppearanceHeadline6"
         android:textStyle="bold"
-        android:textColor="#3B8132"
+        android:textColor="#000000"
         android:textSize="35sp"
-        android:layout_gravity="center_horizontal"/>
+        android:paddingHorizontal="30dp"
+        android:textAlignment="center"/>
 
     <ImageView
         android:id="@+id/iv_kidReading"
         android:layout_width="292dp"
         android:layout_height="409dp"
         android:layout_gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/kidreading" />
 
 
@@ -34,22 +35,32 @@
         android:id="@+id/btn_show_all"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         android:text="Let's pick one !"
         android:textSize="16sp"
+        android:textColor="#000000"
         android:backgroundTint="#3B8132"
-        android:layout_gravity="center_horizontal"/>
+        android:background="@drawable/rounded_button"/>
 
-    <Button
-        android:id="@+id/btn_show_favorites"
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/tv_kidsTales"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
-        android:text="See your favorites"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:text="Kids Tales"
+        android:textAppearance="?attr/textAppearanceHeadline6"/>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textSize="16sp"
-        android:backgroundTint="#3B8132"
-        android:layout_gravity="center_horizontal"/>
+        android:textStyle="bold"
+        android:text="Inspiring Young Minds, One Tale at a Time" />
+
 
 </LinearLayout>

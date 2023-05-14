@@ -8,6 +8,42 @@
 
 
 
+    <ImageButton
+        android:id="@+id/ib_backToMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available Tales"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toEndOf="@id/ib_backToMain"
+        app:layout_constraintEnd_toStartOf="@id/ib_view"
+        app:layout_constraintTop_toTopOf="@id/ib_backToMain"  />
+
+
+
+    <ImageButton
+        android:id="@+id/ib_ShowFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_show_favorites"
+        app:layout_constraintTop_toTopOf="@id/ib_backToMain"
+        app:layout_constraintEnd_toStartOf="@id/ib_view"
+        android:padding="8dp"
+        android:background="?android:attr/selectableItemBackground" />
+
 
     <ImageButton
         android:id="@+id/ib_view"
@@ -16,10 +52,8 @@
         android:src="@drawable/ic_grid_view"
         android:background="?android:attr/selectableItemBackground"
         android:padding="8dp"
-        android:onClick="onIbClicked"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ib_backToMain"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -32,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@id/ib_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
