@@ -28,7 +28,7 @@ public class ScenesActivity extends AppCompatActivity {
         String storyJson = getIntent().getStringExtra("Story");
         Story story = gson.fromJson(storyJson, Story.class);
 
-        Log.d("MY_TAG_activity","THE SELECTED STORY IS "+story.getTitle());
+       // Log.d("MY_TAG_activity","THE SELECTED STORY IS "+story.getTitle());
         Log.d("MY_TAG_activity","THE SIZE OF THE SCENCES "+story.getScenes().size());
 
         List<Scene> myScenes = story.getScenes();

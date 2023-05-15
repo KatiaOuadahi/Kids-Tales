@@ -7,7 +7,7 @@ public class Story {
     private boolean isFavorite;
     private List<Scene> scenes;
 
-    public Story(int imageResource, String titleResourceId ,List<Scene> scenes) {
+    public Story(int imageResource, int titleResourceId ,List<Scene> scenes) {
         this.imageResource = imageResource;
         this.titleResourceId = titleResourceId;
         this.isFavorite = false; // Initialize isFavorite to false for all stories

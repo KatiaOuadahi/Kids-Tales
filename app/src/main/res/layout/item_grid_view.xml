@@ -7,7 +7,7 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp"
-    android:id="@+id/Story_card">
+    android:id="@+id/Story_card_grid">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

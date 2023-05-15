@@ -52,24 +52,40 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         holder.imageView.setImageResource(story.getCoverImage());
         holder.titleTextView.setText(story.getTitleResourceId());
 
-
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start the SceneActivity and pass the selected story as extra
-
-
-                Gson gson = new Gson();
-                String storyJson = gson.toJson(story);
-                Intent intent = new Intent(v.getContext(), ScenesActivity.class);
-                intent.putExtra("Story", storyJson);
-                v.getContext().startActivity(intent);
-
-                Log.d("MY_TAG_Adapter","the first scence is:"+story.getScenes().get(0).getText());
-            }
-        });
+if(holder.cardViewGrid!=null) {
+    holder.cardViewGrid.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Start the SceneActivity and pass the selected story as extra
 
 
+            Gson gson = new Gson();
+            String storyJson = gson.toJson(story);
+            Intent intent = new Intent(v.getContext(), ScenesActivity.class);
+            intent.putExtra("Story", storyJson);
+            v.getContext().startActivity(intent);
+
+            Log.d("MY_TAG_Adapter", "the first scence is:" + story.getScenes().get(0).getText());
+        }
+    });
+}
+        if(holder.cardViewList!=null) {
+            holder.cardViewList.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Start the SceneActivity and pass the selected story as extra
+
+
+                    Gson gson = new Gson();
+                    String storyJson = gson.toJson(story);
+                    Intent intent = new Intent(v.getContext(), ScenesActivity.class);
+                    intent.putExtra("Story", storyJson);
+                    v.getContext().startActivity(intent);
+
+                    Log.d("MY_TAG_Adapter", "the first scence is:" + story.getScenes().get(0).getText());
+                }
+            });
+        }
 
         // Update the favorite ImageButton's icon based on the isFavorite field
         if (story.isFavorite()) {
@@ -89,14 +105,17 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         TextView titleTextView;
         ImageButton favoriteButton;
         List<Story> stories;
-        MaterialCardView cardView;
+        MaterialCardView cardViewGrid;
+        MaterialCardView cardViewList;
 
         public StoryViewHolder(View itemView, List<Story> stories, boolean isFavoriteActivity) {
             super(itemView);
             imageView = itemView.findViewById(R.id.iv_storyCover);
             titleTextView = itemView.findViewById(R.id.tv_storyTitle);
             favoriteButton = itemView.findViewById(R.id.ib_favorite);
-            cardView = itemView.findViewById(R.id.Story_card);
+            cardViewGrid = itemView.findViewById(R.id.Story_card_grid);
+            cardViewList = itemView.findViewById(R.id.Story_card_liste);
+
             this.stories = stories;
 
 
