@@ -2,8 +2,8 @@ package com.example.kidstales.model;
 import java.util.List;
 
 public class Story {
-    private int imageResource;
-    private int titleResourceId;
+    private final int imageResource;
+    private final int titleResourceId;
     private boolean isFavorite;
     private List<Scene> scenes;
 

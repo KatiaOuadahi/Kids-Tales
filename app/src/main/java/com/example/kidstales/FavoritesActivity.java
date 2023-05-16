@@ -22,7 +22,6 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-    private LinearLayout linearLayout;
     private ImageButton viewButton;
     private boolean isGridView = true;
     private List<Story> favoriteStories;
@@ -35,15 +34,10 @@ public class FavoritesActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.grid_recycler_view);
         viewButton = findViewById(R.id.ib_view);
-        linearLayout = findViewById(R.id.ll_noFavorites);
+        LinearLayout linearLayout = findViewById(R.id.ll_noFavorites);
 
 
-        viewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toggleView();
-            }
-        });
+        viewButton.setOnClickListener(v -> toggleView());
 
         // Retrieve the favorite stories from FavoritesManager
         FavoritesManager favoritesManager = FavoritesManager.getInstance();
@@ -65,19 +59,16 @@ public class FavoritesActivity extends AppCompatActivity {
 
         ImageButton backToStoriesList = findViewById(R.id.ib_backToStoriesList);
         //move to StoriesListActiviy when  ib_backToStoriesList  is clicked
-        backToStoriesList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(FavoritesActivity.this, StoriesListActivity.class);
-                startActivity(intent);
-            }
+        backToStoriesList.setOnClickListener(v -> {
+            Intent intent = new Intent(FavoritesActivity.this, StoriesListActivity.class);
+            startActivity(intent);
         });
 
     }
 
     private void setGridView() {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        adapter = new StoryAdapter(this, favoriteStories, R.layout.item_grid_view, true);
+        adapter = new StoryAdapter(favoriteStories, R.layout.item_grid_view, true);
         recyclerView.setAdapter(adapter);
         isGridView = true;
         viewButton.setImageResource(R.drawable.ic_list_view); // Set icon to list view
@@ -85,7 +76,7 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private void setListView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        adapter = new StoryAdapter(this, favoriteStories, R.layout.item_vertical_view, true);
+        adapter = new StoryAdapter(favoriteStories, R.layout.item_vertical_view, true);
         recyclerView.setAdapter(adapter);
         isGridView = false;
         viewButton.setImageResource(R.drawable.ic_grid_view); // Set icon to grid view

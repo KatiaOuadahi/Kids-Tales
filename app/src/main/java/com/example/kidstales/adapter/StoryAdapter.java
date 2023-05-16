@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kidstales.R;
@@ -27,10 +28,10 @@ import java.util.List;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHolder> {
 
-    private List<Story> stories;
+    private final List<Story> stories;
     private Context context;
-    private int layoutResId;
-    private boolean isFavoriteActivity;
+    private final int layoutResId;
+    private final boolean isFavoriteActivity;
 
     public StoryAdapter(Context context, List<Story> stories, @LayoutRes int layoutResId, boolean isFavoriteActivity) {
         this.context = context;
@@ -39,6 +40,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         this.isFavoriteActivity = isFavoriteActivity;
     }
 
+    @NonNull
     @Override
     public StoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
@@ -100,7 +102,7 @@ if(holder.cardViewGrid!=null) {
         return stories.size();
     }
 
-    public class StoryViewHolder extends RecyclerView.ViewHolder {
+    public static class StoryViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView titleTextView;
         ImageButton favoriteButton;
@@ -123,26 +125,23 @@ if(holder.cardViewGrid!=null) {
                 favoriteButton.setVisibility(View.GONE); // Hide the favorite ImageButton
             } else {
                 // Implement a click listener for the favorite ImageButton
-                favoriteButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int position = getAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION) {
-                            // Get the corresponding story
-                            Story story = stories.get(position);
+                favoriteButton.setOnClickListener(v -> {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        // Get the corresponding story
+                        Story story = stories.get(position);
 
-                            // Toggle the isFavorite field
-                            boolean isFavorite = story.isFavorite();
-                            story.setFavorite(!isFavorite);
+                        // Toggle the isFavorite field
+                        boolean isFavorite = story.isFavorite();
+                        story.setFavorite(!isFavorite);
 
-                            // Update the ImageButton's icon based on the isFavorite field
-                            if (story.isFavorite()) {
-                                favoriteButton.setImageResource(R.drawable.ic_heart_filled);
-                                FavoritesManager.getInstance().addFavoriteStory(story); // Add the story to favorites
-                            } else {
-                                favoriteButton.setImageResource(R.drawable.ic_heart_outline);
-                                FavoritesManager.getInstance().removeFavoriteStory(story); // Remove the story from favorites
-                            }
+                        // Update the ImageButton's icon based on the isFavorite field
+                        if (story.isFavorite()) {
+                            favoriteButton.setImageResource(R.drawable.ic_heart_filled);
+                            FavoritesManager.getInstance().addFavoriteStory(story); // Add the story to favorites
+                        } else {
+                            favoriteButton.setImageResource(R.drawable.ic_heart_outline);
+                            FavoritesManager.getInstance().removeFavoriteStory(story); // Remove the story from favorites
                         }
                       }
                                                                     });

@@ -38,7 +38,7 @@ public class StoriesDataSource {
         generateScenesOfStory07();
         generateScenesOfStory08();
         stories = new ArrayList<>();
-        stories.add(new Story(R.drawable.story1_page1, R.string.title1,ScenesOfStory01));
+        stories.add(new Story(R.drawable.story1_page1, R.string.title3,ScenesOfStory01));
         stories.add(new Story(R.drawable.story2_page2, R.string.title2,ScenesOfStory02));
         stories.add(new Story(R.drawable.story3_page4, R.string.title3,ScenesOfStory03));
         stories.add(new Story(R.drawable.story4_page3, R.string.title4,ScenesOfStory04));

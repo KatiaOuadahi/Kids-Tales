@@ -2,7 +2,6 @@ package com.example.kidstales;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,34 +26,23 @@ public class StoriesListActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.grid_recycler_view);
         viewButton = findViewById(R.id.ib_view);
-        viewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toggleView();
-            }
-        });
+        viewButton.setOnClickListener(v -> toggleView());
 
         setGridView(); // Set initial view as grid view
 
 
         ImageButton showFavorites = findViewById(R.id.ib_ShowFavorites);
         //move to StoriesListActiviy when the btn_show_all button is clicked
-        showFavorites.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StoriesListActivity.this, FavoritesActivity.class);
-                startActivity(intent);
-            }
+        showFavorites.setOnClickListener(v -> {
+            Intent intent = new Intent(StoriesListActivity.this, FavoritesActivity.class);
+            startActivity(intent);
         });
 
         ImageButton backToMain = findViewById(R.id.ib_backToMain);
         //move to mainActivity when ib_backToMain is clicked
-        backToMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StoriesListActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
+        backToMain.setOnClickListener(v -> {
+            Intent intent = new Intent(StoriesListActivity.this, MainActivity.class);
+            startActivity(intent);
         });
 
 
@@ -62,7 +50,7 @@ public class StoriesListActivity extends AppCompatActivity {
 
     private void setGridView() {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        StoryAdapter adapter = new StoryAdapter(this, StoriesDataSource.getStories(), R.layout.item_grid_view, false);
+        StoryAdapter adapter = new StoryAdapter(StoriesDataSource.getStories(), R.layout.item_grid_view, false);
         recyclerView.setAdapter(adapter);
         isGridView = true;
         viewButton.setImageResource(R.drawable.ic_list_view); // Set icon to list view
@@ -70,7 +58,7 @@ public class StoriesListActivity extends AppCompatActivity {
 
     private void setListView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        StoryAdapter adapter = new StoryAdapter(this, StoriesDataSource.getStories(), R.layout.item_vertical_view, false);
+        StoryAdapter adapter = new StoryAdapter(StoriesDataSource.getStories(), R.layout.item_vertical_view, false);
         recyclerView.setAdapter(adapter);
         isGridView = false;
         viewButton.setImageResource(R.drawable.ic_grid_view); // Set icon to grid view
