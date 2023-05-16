@@ -1,8 +1,8 @@
 package com.example.kidstales.model;
 
 public class Story {
-    private int imageResource;
-    private int titleResourceId;
+    private final int imageResource;
+    private final int titleResourceId;
     private boolean isFavorite;
 
     public Story(int imageResource, int  titleResourceId) {

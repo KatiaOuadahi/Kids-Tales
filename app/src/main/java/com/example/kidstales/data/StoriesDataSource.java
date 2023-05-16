@@ -18,7 +18,7 @@ public class StoriesDataSource {
 
     private static void generateStories() {
         stories = new ArrayList<>();
-        stories.add(new Story(R.drawable.story1_page1, R.string.title1));
+        stories.add(new Story(R.drawable.story1_page3, R.string.title1));
         stories.add(new Story(R.drawable.story2_page2, R.string.title2));
         stories.add(new Story(R.drawable.story3_page4, R.string.title3));
         stories.add(new Story(R.drawable.story4_page3, R.string.title4));
@@ -27,4 +27,5 @@ public class StoriesDataSource {
         stories.add(new Story(R.drawable.story7_page2, R.string.title7));
         stories.add(new Story(R.drawable.story8_page1, R.string.title8));
     }
+
 }
