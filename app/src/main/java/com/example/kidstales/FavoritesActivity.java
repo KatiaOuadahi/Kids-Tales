@@ -1,5 +1,6 @@
 package com.example.kidstales;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +27,7 @@ public class FavoritesActivity extends AppCompatActivity {
     private boolean isGridView = true;
     private List<Story> favoriteStories;
     private StoryAdapter adapter;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,7 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private void setGridView() {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        adapter = new StoryAdapter(favoriteStories, R.layout.item_grid_view, true);
+        adapter = new StoryAdapter(context,favoriteStories, R.layout.item_grid_view, true);
         recyclerView.setAdapter(adapter);
         isGridView = true;
         viewButton.setImageResource(R.drawable.ic_list_view); // Set icon to list view
@@ -76,7 +78,7 @@ public class FavoritesActivity extends AppCompatActivity {
 
     private void setListView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        adapter = new StoryAdapter(favoriteStories, R.layout.item_vertical_view, true);
+        adapter = new StoryAdapter(context,favoriteStories, R.layout.item_vertical_view, true);
         recyclerView.setAdapter(adapter);
         isGridView = false;
         viewButton.setImageResource(R.drawable.ic_grid_view); // Set icon to grid view

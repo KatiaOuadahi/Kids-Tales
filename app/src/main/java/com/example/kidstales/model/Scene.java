@@ -1,12 +1,12 @@
 package com.example.kidstales.model;
 
 public class Scene {
-    private int backgroundResourceId;
-    private String textToRead;
+    private final int backgroundResourceId;
+    private final int  textToReadId;
 
-    public Scene(int backgroundResourceId, String textToRead) {
+    public Scene(int backgroundResourceId, int textToRead) {
         this.backgroundResourceId = backgroundResourceId;
-        this.textToRead = textToRead;
+        this.textToReadId = textToRead;
     }
 
     public int getBackgroundResourceId() {
@@ -14,8 +14,8 @@ public class Scene {
     }
 
 
-    public String getText() {
-        return textToRead;
+    public int getText() {
+        return textToReadId;
     }
 
 }
