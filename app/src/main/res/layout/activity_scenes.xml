@@ -14,7 +14,8 @@
         android:background="?android:attr/selectableItemBackground"
         android:padding="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp" />
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/backToStoriesList" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
@@ -30,9 +31,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Swipe To The Next page"
+        android:text="@string/swipe"
         android:layout_marginBottom="30dp"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textAppearance= "?attr/textAppearanceHeadline6"
         />
 
@@ -42,9 +43,9 @@
         android:src="@drawable/baseline_arrow_back_ios_24"
         android:background="?android:attr/selectableItemBackground"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@id/tv_swipe"
+        android:layout_toStartOf="@id/tv_swipe"
         android:layout_marginBottom="25dp"
-        />
+        android:contentDescription="@string/swipeLeft" />
 
     <ImageButton
         android:layout_width="30dp"
@@ -52,8 +53,9 @@
         android:src="@drawable/baseline_arrow_forward_ios_24"
         android:background="?android:attr/selectableItemBackground"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/tv_swipe"
+        android:layout_toEndOf="@id/tv_swipe"
         android:layout_marginBottom="25dp"
+        android:contentDescription="@string/swipeRight"
         />
 
 </RelativeLayout>

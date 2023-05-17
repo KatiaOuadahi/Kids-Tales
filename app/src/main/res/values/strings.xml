@@ -28,6 +28,14 @@
     <string name="title7">The Ugly Duckling</string>
     <string name="title8">The Elephant and the Ants</string>
 
+
+    //ScenesActivity Strings
+    <string name="swipe">Swipe</string>
+    <string name="swipeRight">Swipe Right</string>
+    <string name="swipeLeft">Swipe Left</string>
+    <string name="backToStoriesList">back To Stories List</string>
+
+
     //Story's scenes strings (Story 1)
     <string name="story1_scene1">There was once a hare who was friends with a tortoise.One day, he challenged the tortoise to a race.</string>
     <string name="story1_scene2">Seeing how slow the tortoise was going,the hare thought he’ll win this easily. </string>
