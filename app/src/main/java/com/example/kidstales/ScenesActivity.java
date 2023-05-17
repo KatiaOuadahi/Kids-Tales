@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.kidstales.adapter.ScenesAdapter;
 import com.example.kidstales.adapter.StoryAdapter;
@@ -45,6 +46,25 @@ public class ScenesActivity extends AppCompatActivity {
             Intent intent = new Intent(ScenesActivity.this, StoriesListActivity.class);
             startActivity(intent);
         });
+
+        // set the Clicking Swipe pages and change the number of the current page
+        ImageButton ibPrevPage=findViewById(R.id.ib_PrevPage);
+        ImageButton ibNextPage=findViewById(R.id.ib_NextPage);
+        TextView currentPage=findViewById(R.id.tv_PageNumber);
+
+        ibNextPage.setOnClickListener(v->{
+            int nextPage = viewPager.getCurrentItem() + 1;
+            viewPager.setCurrentItem(nextPage);
+            String myPage= String.valueOf(nextPage);
+            currentPage.setText(myPage);
+        });
+        ibPrevPage.setOnClickListener(v->{
+            int prevPage = viewPager.getCurrentItem() - 1;
+            viewPager.setCurrentItem(prevPage);
+            String myPage= String.valueOf(prevPage);
+            currentPage.setText(myPage);
+        });
+
 
     }
 }
