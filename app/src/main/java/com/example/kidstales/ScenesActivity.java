@@ -5,16 +5,15 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.kidstales.adapter.ScenesAdapter;
-import com.example.kidstales.adapter.StoryAdapter;
-import com.example.kidstales.data.StoriesDataSource;
+
 import com.example.kidstales.model.Scene;
 import com.example.kidstales.model.Story;
-import com.google.gson.Gson;
+
 
 import java.util.List;
 
@@ -26,9 +25,9 @@ public class ScenesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scenes);
 
         // Get the Story object passed from StoriesListActivity
-        Gson gson = new Gson();
-        String storyJson = getIntent().getStringExtra("Story");
-        Story story = gson.fromJson(storyJson, Story.class);
+
+        Story story= (Story) getIntent().getSerializableExtra("Story");
+
 
         //Get the scenes
         List<Scene> myScenes = story.getScenes();

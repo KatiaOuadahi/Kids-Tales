@@ -1,7 +1,8 @@
 package com.example.kidstales.model;
+import java.io.Serializable;
 import java.util.List;
 
-public class Story {
+public class Story implements Serializable {
     private final int imageResource;
     private final int titleResourceId;
     private boolean isFavorite;

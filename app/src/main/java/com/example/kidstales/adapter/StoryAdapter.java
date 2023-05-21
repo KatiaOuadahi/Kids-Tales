@@ -17,13 +17,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kidstales.R;
 import com.example.kidstales.ScenesActivity;
-import com.example.kidstales.model.Scene;
+
 import com.example.kidstales.model.Story;
 import com.example.kidstales.utils.FavoritesManager;
 import com.google.android.material.card.MaterialCardView;
-import com.google.gson.Gson;
 
 
+import java.io.Serializable;
 import java.util.List;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHolder> {
@@ -61,10 +61,9 @@ if(holder.cardViewGrid!=null) {
             // Start the SceneActivity and pass the selected story as extra
 
 
-            Gson gson = new Gson();
-            String storyJson = gson.toJson(story);
+
             Intent intent = new Intent(v.getContext(), ScenesActivity.class);
-            intent.putExtra("Story", storyJson);
+            intent.putExtra("Story", (Serializable)story);
             v.getContext().startActivity(intent);
 
             Log.d("MY_TAG_Adapter", "the first scence is:" + story.getScenes().get(0).getText());
@@ -77,14 +76,13 @@ if(holder.cardViewGrid!=null) {
                 public void onClick(View v) {
                     // Start the SceneActivity and pass the selected story as extra
 
-
-                    Gson gson = new Gson();
-                    String storyJson = gson.toJson(story);
                     Intent intent = new Intent(v.getContext(), ScenesActivity.class);
-                    intent.putExtra("Story", storyJson);
+                    intent.putExtra("Story", (Serializable)story);
                     v.getContext().startActivity(intent);
 
                     Log.d("MY_TAG_Adapter", "the first scence is:" + story.getScenes().get(0).getText());
+
+
                 }
             });
         }

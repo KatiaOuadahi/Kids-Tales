@@ -1,6 +1,8 @@
 package com.example.kidstales.model;
 
-public class Scene {
+import java.io.Serializable;
+
+public class Scene implements Serializable {
     private final int backgroundResourceId;
     private final int  textToReadId;
 
