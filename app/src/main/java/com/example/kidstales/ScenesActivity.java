@@ -51,11 +51,14 @@ public class ScenesActivity extends AppCompatActivity {
         ImageButton ibPrevPage=findViewById(R.id.ib_PrevPage);
         ImageButton ibNextPage=findViewById(R.id.ib_NextPage);
         TextView currentPage=findViewById(R.id.tv_PageNumber);
-
+        int defaultpage =1;
         ibNextPage.setOnClickListener(v->{
+
             int nextPage = viewPager.getCurrentItem() + 1;
             viewPager.setCurrentItem(nextPage);
-            String myPage= String.valueOf(nextPage);
+            int increment =defaultpage+1;
+            String myPage= String.valueOf(increment);
+
             currentPage.setText(myPage);
         });
         ibPrevPage.setOnClickListener(v->{
