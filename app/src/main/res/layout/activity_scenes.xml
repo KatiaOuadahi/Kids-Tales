@@ -18,12 +18,26 @@
         android:layout_marginStart="16dp"
         android:contentDescription="@string/backToStoriesList" />
 
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Title"
+        android:layout_toRightOf="@+id/ib_backToStoriesList"
+        android:textSize="20sp"
+        android:layout_marginTop="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:textAppearance= "?attr/textAppearanceHeadline6"
+
+        />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
-        android:layout_marginTop="60dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        android:background="@color/white"
         />
 
     <TextView
@@ -36,7 +50,7 @@
         android:layout_marginBottom="30dp"
         android:textSize="20sp"
         android:textAppearance= "?attr/textAppearanceHeadline6"
-       
+
         />
 
     <ImageButton

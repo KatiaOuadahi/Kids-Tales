@@ -18,7 +18,9 @@ import com.example.kidstales.model.Story;
 import java.util.List;
 
 public class ScenesActivity extends AppCompatActivity {
-
+    int defaultpage =1;
+    String myPage;
+    TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,9 @@ public class ScenesActivity extends AppCompatActivity {
         //Get the scenes
         List<Scene> myScenes = story.getScenes();
 
-
+        int mytitle = story.getTitleResourceId();
+        title=findViewById(R.id.tv_title);
+        title.setText(mytitle);
 
         // Set up the ViewPager to display the story's scenes
         ViewPager viewPager = findViewById(R.id.viewPager);
@@ -50,20 +54,20 @@ public class ScenesActivity extends AppCompatActivity {
         ImageButton ibPrevPage=findViewById(R.id.ib_PrevPage);
         ImageButton ibNextPage=findViewById(R.id.ib_NextPage);
         TextView currentPage=findViewById(R.id.tv_PageNumber);
-        int defaultpage =1;
+        currentPage.setText("1");
         ibNextPage.setOnClickListener(v->{
 
             int nextPage = viewPager.getCurrentItem() + 1;
             viewPager.setCurrentItem(nextPage);
             int increment =defaultpage+1;
-            String myPage= String.valueOf(increment);
+            myPage= String.valueOf(increment);
 
             currentPage.setText(myPage);
         });
         ibPrevPage.setOnClickListener(v->{
             int prevPage = viewPager.getCurrentItem() - 1;
             viewPager.setCurrentItem(prevPage);
-            String myPage= String.valueOf(prevPage);
+            myPage= String.valueOf(prevPage);
             currentPage.setText(myPage);
         });
 

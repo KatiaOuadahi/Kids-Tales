@@ -37,46 +37,46 @@
 
 
     //Story's scenes strings (Story 1)
-    <string name="story1_scene1">There was once a hare who was friends with a tortoise.One day, he challenged the tortoise to a race.</string>
+    <string name="story1_scene1">\t There was once a hare who was friends with a tortoise.\nOne day, he challenged the tortoise to a race.</string>
     <string name="story1_scene2">Seeing how slow the tortoise was going,the hare thought he’ll win this easily. </string>
     <string name="story1_scene3">So he took a nap while the tortoise kept on going. </string>
     <string name="story1_scene4">When the hare woke up, he saw that the tortoise was already at the finish line.Much to his chagrin, the tortoise won the race while he was busy sleeping.</string>
 
 
     //Story's scenes strings (Story 2)
-    <string name="story2_scene1">Once there was a dog who wandered the streets night and day in search of food. One day, he found a big juicy bone.</string>
+    <string name="story2_scene1">\t Once there was a dog who wandered the streets night and day in search of food. \nOne day, he found a big juicy bone.</string>
     <string name="story2_scene2">He immediately grabbed it between his mouth and took it home. </string>
     <string name="story2_scene3">On his way home, he crossed a river and saw another dog who also had a bone in its mouth. He wanted that bone for himself too. </string>
     <string name="story2_scene4">But as he opened his mouth, the bone he was biting fell into the river and sank. That night, he went home hungry.</string>
 
     //Story's scenes strings (Story 3)
-    <string name="story3_scene1">After flying a long distance, a thirsty crow was wandering the forest in search of water. Finally, he saw a pot half-filled with water.</string>
+    <string name="story3_scene1">\t After flying a long distance, a thirsty crow was wandering the forest in search of water. Finally, he saw a pot half-filled with water.</string>
     <string name="story3_scene2">He tried to drink from it but his beak wasn’t long enough to reach the water inside. </string>
     <string name="story3_scene3">He then saw pebbles on the ground and one by one, he put them in the pot until the water rose to the brim.</string>
     <string name="story3_scene4">The crow then hastily drank from it and quenched his thirst.</string>
 
     //Story's scenes strings (Story 4)
-    <string name="story4_scene1">Once there was a hungry fox who stumbled upon a vineyard. </string>
+    <string name="story4_scene1">\t Once there was a hungry fox who stumbled upon a vineyard. </string>
     <string name="story4_scene2">After seeing the round, juicy grapes hanging in a bunch, the fox drooled.</string>
     <string name="story4_scene3">But no matter how high he jumped, he couldn’t reach for it.</string>
     <string name="story4_scene4">So he told himself that it was probably sour and left. That night, he had to sleep on an empty stomach.</string>
 
     //Story's scenes strings (Story 5)
-    <string name="story5_scene1">The ant and the grasshopper were good friends. In the summer, the ant works hard to fill his storage with food. While the grasshopper was playing all day.</string>
+    <string name="story5_scene1">\t The ant and the grasshopper were good friends. \nIn the summer, the ant works hard to fill his storage with food. While the grasshopper was playing all day.</string>
     <string name="story5_scene2">When winter came, the ant was lying cozily in his home surrounded by the food he stored during the summer. While the grasshopper hungry and freezing.</string>
     <string name="story5_scene3">He asked the ant for food and the ant gave him some. But it wasn’t enough to last the entire winter.</string>
     <string name="story5_scene4">When he tried to ask the ant again, the latter replied: “I’m sorry my friend but my food is just enough for my family to last until the end of winter.</string>
     <string name="story5_scene5">If I give you more, we too will starve. We had the entire summer to prepare for the winter but you chose to play instead.”</string>
 
     //Story's scenes strings (Story 6)
-    <string name="story6_scene1">There was once a shepherd boy who liked to play tricks. One day, while he was watching over the herd, the boy decided to play a trick and cried “wolf! wolf!”.</string>
+    <string name="story6_scene1">\t There was once a shepherd boy who liked to play tricks. \nOne day, while he was watching over the herd, the boy decided to play a trick and cried “wolf! wolf!”.</string>
     <string name="story6_scene2">The people who heard rushed over to help him. But they were disappointed when they saw that there was no wolf and the boy was laughing at them.</string>
     <string name="story6_scene3">The next day, he did it again and people rushed to his aid only to be disappointed once again.</string>
     <string name="story6_scene4">On the third day, the boy saw a wolf devouring one of his sheep and cried for help. But the people who heard him thought this is just another of the boy’s pranks.</string>
     <string name="story6_scene5">So no one came to help him. That day, the boy lost some of his sheep to the wolf.</string>
 
     //Story's scenes strings (Story 7)
-    <string name="story7_scene1">There was once a a duckling who from the moment of his birth has always felt different from his siblings.</string>
+    <string name="story7_scene1">\t There was once a a duckling who from the moment of his birth has always felt different from his siblings.</string>
     <string name="story7_scene2">He was always picked on because he didn’t look like the rest of them. One day, he had enough and ran away from the pond he grew up in.</string>
     <string name="story7_scene3">He wandered near and far looking for a family who would accept him. Months passed and seasons changed but everywhere he went, nobody wanted him because he was such an ugly duck.</string>
     <string name="story7_scene4">Then one day, he came upon a family of swans.</string>
@@ -84,7 +84,7 @@
     <string name="story7_scene6">Now he finally understood why he never looked like the rest of his siblings because he isn’t a duck but a swan.</string>
 
     //Story's scenes strings (Story 8)
-    <string name="story8_scene1">There was once a proud elephant who always bullied smaller animals.</string>
+    <string name="story8_scene1">\t There was once a proud elephant who always bullied smaller animals.</string>
     <string name="story8_scene2">He would go to the anthill near his home and spray water at the ants. The ants, with their size, could do nothing but cry.</string>
     <string name="story8_scene3">One day, the ants had enough and decided to teach the elephant a lesson. They went straight into the elephant’s trunk and started biting him.</string>
     <string name="story8_scene4">The elephant could only howl in pain.</string>
