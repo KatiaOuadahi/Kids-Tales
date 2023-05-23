@@ -21,6 +21,8 @@ public class ScenesActivity extends AppCompatActivity {
     int defaultpage =1;
     String myPage;
     TextView title;
+
+    static int  numPage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,22 +55,60 @@ public class ScenesActivity extends AppCompatActivity {
         // set the Clicking Swipe pages and change the number of the current page
         ImageButton ibPrevPage=findViewById(R.id.ib_PrevPage);
         ImageButton ibNextPage=findViewById(R.id.ib_NextPage);
-        TextView currentPage=findViewById(R.id.tv_PageNumber);
-        currentPage.setText("1");
+        TextView pageNumberTextView=findViewById(R.id.tv_PageNumber);
+
+
+        int initialPage = 0; // Set the initial page number here
+        viewPager.setCurrentItem(initialPage);
+        pageNumberTextView.setText("" + (initialPage + 1)); // Add 1 to display a 1-based index
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                // Not needed for updating the current page number dynamically
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int currentPage = position + 1; // Add 1 to position to display a 1-based index
+                String pageNumberText = "" + currentPage;
+                pageNumberTextView.setText(pageNumberText);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                // Not needed for updating the current page number dynamically
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         ibNextPage.setOnClickListener(v->{
 
-            int nextPage = viewPager.getCurrentItem() + 1;
+            int nextPage =viewPager.getCurrentItem() + 1;
             viewPager.setCurrentItem(nextPage);
-            int increment =defaultpage+1;
-            myPage= String.valueOf(increment);
-
-            currentPage.setText(myPage);
         });
+
+
         ibPrevPage.setOnClickListener(v->{
             int prevPage = viewPager.getCurrentItem() - 1;
             viewPager.setCurrentItem(prevPage);
-            myPage= String.valueOf(prevPage);
-            currentPage.setText(myPage);
+           // currentPage.setText(String.valueOf(prevPage));
         });
 
 
