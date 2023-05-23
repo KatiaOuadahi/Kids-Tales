@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
         android:background="@color/white"
+        android:contentDescription="@string/contentDescription"
         />
 
     <TextView
@@ -67,12 +68,11 @@
         android:id="@+id/ib_NextPage"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/ic_baseline_arrow_forward"
-        android:background="?android:attr/selectableItemBackground"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@id/tv_PageNumber"
         android:layout_marginBottom="25dp"
-        tools:ignore="ContentDescription"
-        />
+        android:layout_toEndOf="@id/tv_PageNumber"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_baseline_arrow_forward"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
 </RelativeLayout>
