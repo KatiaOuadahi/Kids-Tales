@@ -18,11 +18,12 @@ import com.example.kidstales.model.Story;
 import java.util.List;
 
 public class ScenesActivity extends AppCompatActivity {
-    int defaultpage =1;
-    String myPage;
     TextView title;
-
-    static int  numPage;
+    ViewPager viewPager;
+    ScenesAdapter scenesAdapter;
+    ImageButton ibNextPage;
+    ImageButton ibPrevPage;
+    TextView pageNumberTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +42,8 @@ public class ScenesActivity extends AppCompatActivity {
         title.setText(mytitle);
 
         // Set up the ViewPager to display the story's scenes
-        ViewPager viewPager = findViewById(R.id.viewPager);
-        ScenesAdapter scenesAdapter=new ScenesAdapter(ScenesActivity.this,myScenes);
+        viewPager = findViewById(R.id.viewPager);
+        scenesAdapter=new ScenesAdapter(ScenesActivity.this,myScenes);
         viewPager.setAdapter(scenesAdapter);
 
         //move to the StoriesListActivity when the ib_backToStoriesList is clicked
@@ -52,21 +53,22 @@ public class ScenesActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // set the Clicking Swipe pages and change the number of the current page
-        ImageButton ibPrevPage=findViewById(R.id.ib_PrevPage);
-        ImageButton ibNextPage=findViewById(R.id.ib_NextPage);
-        TextView pageNumberTextView=findViewById(R.id.tv_PageNumber);
+
+        // change the number of the current page
+
+        pageNumberTextView=findViewById(R.id.tv_PageNumber);
 
 
-        int initialPage = 0; // Set the initial page number here
+        // Set the initial page number here
+        int initialPage = 0;
         viewPager.setCurrentItem(initialPage);
-        pageNumberTextView.setText("" + (initialPage + 1)); // Add 1 to display a 1-based index
+        pageNumberTextView.setText((initialPage + 1)); // Add 1 to display a 1-based index
 
+
+        // change the current page by swiping (left/right)
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                // Not needed for updating the current page number dynamically
-            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
             @Override
             public void onPageSelected(int position) {
@@ -76,9 +78,7 @@ public class ScenesActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-                // Not needed for updating the current page number dynamically
-            }
+            public void onPageScrollStateChanged(int state) {}
         });
 
 
@@ -86,20 +86,12 @@ public class ScenesActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
+        // change the current page by clicking on the image button  (prev/next)
+        ibPrevPage=findViewById(R.id.ib_PrevPage);
+        ibNextPage=findViewById(R.id.ib_NextPage);
 
 
         ibNextPage.setOnClickListener(v->{
-
             int nextPage =viewPager.getCurrentItem() + 1;
             viewPager.setCurrentItem(nextPage);
         });
@@ -108,7 +100,6 @@ public class ScenesActivity extends AppCompatActivity {
         ibPrevPage.setOnClickListener(v->{
             int prevPage = viewPager.getCurrentItem() - 1;
             viewPager.setCurrentItem(prevPage);
-           // currentPage.setText(String.valueOf(prevPage));
         });
 
 
