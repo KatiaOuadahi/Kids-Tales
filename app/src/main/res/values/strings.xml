@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kid\'s Tales</string>
+    <string name="app_name">Kids Tales</string>
 
 
     //MainActivity strings
@@ -15,7 +15,6 @@
     //FavoritesActivity strings
     <string name="yourFav">Your Favorites</string>
     <string name="noFav">You have not set any favorite tale !</string>
-
 
 
     //stories_titles strings
@@ -37,10 +36,10 @@
 
 
     //Story's scenes strings (Story 1)
-    <string name="story1_scene1">\t There was once a hare who was friends with a tortoise.\nOne day, he challenged the tortoise to a race.</string>
-    <string name="story1_scene2">Seeing how slow the tortoise was going,the hare thought he’ll win this easily. </string>
+    <string name="story1_scene1">\t There was once a hare who was friends with a tortoise. One day, he challenged the tortoise to a race.</string>
+    <string name="story1_scene2">Seeing how slow the tortoise was going, the hare thought he’ll win this easily. </string>
     <string name="story1_scene3">So he took a nap while the tortoise kept on going. </string>
-    <string name="story1_scene4">When the hare woke up, he saw that the tortoise was already at the finish line.Much to his chagrin, the tortoise won the race while he was busy sleeping.</string>
+    <string name="story1_scene4">When the hare woke up, he saw that the tortoise was already at the finish line. Much to his chagrin, the tortoise won the race while he was busy sleeping.</string>
 
 
     //Story's scenes strings (Story 2)

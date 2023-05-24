@@ -3,8 +3,8 @@ package com.example.kidstales.model;
 import java.io.Serializable;
 
 public class Scene implements Serializable {
-    private final int backgroundResourceId;
-    private final int  textToReadId;
+    private final int backgroundResourceId; // Identifiant de la ressource de l'arrière-plan de la scène
+    private final int textToReadId; // Identifiant de la ressource du texte à lire dans la scène
 
     public Scene(int backgroundResourceId, int textToRead) {
         this.backgroundResourceId = backgroundResourceId;
@@ -15,9 +15,7 @@ public class Scene implements Serializable {
         return backgroundResourceId;
     }
 
-
     public int getText() {
         return textToReadId;
     }
-
 }

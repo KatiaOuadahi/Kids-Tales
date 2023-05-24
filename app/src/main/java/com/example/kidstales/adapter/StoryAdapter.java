@@ -9,14 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.kidstales.R;
 import com.example.kidstales.ScenesActivity;
 import com.example.kidstales.model.Story;
 import com.example.kidstales.utils.FavoritesManager;
 import com.google.android.material.card.MaterialCardView;
+
 import java.util.List;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHolder> {
@@ -70,7 +73,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
             });
         }
 
-        // Update the favorite ImageButton's icon based on the isFavorite field
+        // Mettre à jour l'icône du bouton favori en fonction de la valeur de isFavorite
         if (story.isFavorite()) {
             holder.favoriteButton.setImageResource(R.drawable.ic_heart_filled);
         } else {
@@ -103,26 +106,26 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
 
 
             if (isFavoriteActivity) {
-                favoriteButton.setVisibility(View.GONE); // Hide the favorite ImageButton
+                favoriteButton.setVisibility(View.GONE); // Masquer le bouton favori
             } else {
-                // Implement a click listener for the favorite ImageButton
+                // Mettre en place un écouteur de clic pour le bouton favori
                 favoriteButton.setOnClickListener(v -> {
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
-                        // Get the corresponding story
+                        // Obtenir l'histoire correspondante
                         Story story = stories.get(position);
 
-                        // Toggle the isFavorite field
+                        // Basculer la valeur de isFavorite
                         boolean isFavorite = story.isFavorite();
                         story.setFavorite(!isFavorite);
 
-                        // Update the ImageButton's icon based on the isFavorite field
+                        // Mettre à jour l'icône du bouton favori en fonction de la valeur de isFavorite
                         if (story.isFavorite()) {
                             favoriteButton.setImageResource(R.drawable.ic_heart_filled);
-                            FavoritesManager.getInstance().addFavoriteStory(story); // Add the story to favorites
+                            FavoritesManager.getInstance().addFavoriteStory(story); // Ajouter l'histoire aux favoris
                         } else {
                             favoriteButton.setImageResource(R.drawable.ic_heart_outline);
-                            FavoritesManager.getInstance().removeFavoriteStory(story); // Remove the story from favorites
+                            FavoritesManager.getInstance().removeFavoriteStory(story); // Supprimer l'histoire des favoris
                         }
                     }
                 });

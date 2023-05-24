@@ -22,7 +22,6 @@ import java.util.List;
 public class FavoritesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-
     private ImageButton viewButton;
     private boolean isGridView = true;
     private List<Story> favoriteStories;
@@ -34,18 +33,18 @@ public class FavoritesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
 
+        // Recherche des vues dans le layout
         recyclerView = findViewById(R.id.grid_recycler_view);
         viewButton = findViewById(R.id.ib_view);
         LinearLayout linearLayout = findViewById(R.id.ll_noFavorites);
 
-
+        // Définition du comportement lors du clic sur le bouton view
         viewButton.setOnClickListener(v -> toggleView());
 
-        // Retrieve the favorite stories from FavoritesManager
+        // Récupération des histoires favorites depuis FavoritesManager
         FavoritesManager favoritesManager = FavoritesManager.getInstance();
         favoriteStories = favoritesManager.getFavoriteStories();
         Log.d("MY_TAG_FavoritesActivity", "Favorite stories size: " + favoriteStories.size());
-
 
         if (favoriteStories.isEmpty()) {
             linearLayout.setVisibility(View.VISIBLE);
@@ -53,35 +52,33 @@ public class FavoritesActivity extends AppCompatActivity {
         } else {
             linearLayout.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
-
-
-            setGridView(); // Set initial view as grid view
+            setGridView(); // Définition de la vue initiale en tant que grille
         }
 
-
+        // Recherche du bouton backToStoriesList dans le layout
         ImageButton backToStoriesList = findViewById(R.id.ib_backToStoriesList);
-        //move to StoriesListActiviy when  ib_backToStoriesList  is clicked
+
+        // Définition du comportement lors du clic sur le bouton backToStoriesList
         backToStoriesList.setOnClickListener(v -> {
             Intent intent = new Intent(FavoritesActivity.this, StoriesListActivity.class);
             startActivity(intent);
         });
-
     }
 
     private void setGridView() {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        adapter = new StoryAdapter(context,favoriteStories, R.layout.item_grid_view, true);
+        adapter = new StoryAdapter(context, favoriteStories, R.layout.item_grid_view, true);
         recyclerView.setAdapter(adapter);
         isGridView = true;
-        viewButton.setImageResource(R.drawable.ic_list_view); // Set icon to list view
+        viewButton.setImageResource(R.drawable.ic_list_view); // Définition de l'icône en vue de liste
     }
 
     private void setListView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        adapter = new StoryAdapter(context,favoriteStories, R.layout.item_vertical_view, true);
+        adapter = new StoryAdapter(context, favoriteStories, R.layout.item_vertical_view, true);
         recyclerView.setAdapter(adapter);
         isGridView = false;
-        viewButton.setImageResource(R.drawable.ic_grid_view); // Set icon to grid view
+        viewButton.setImageResource(R.drawable.ic_grid_view); // Définition de l'icône en vue de grille
     }
 
     private void toggleView() {

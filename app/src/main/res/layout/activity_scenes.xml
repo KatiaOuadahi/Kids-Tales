@@ -23,14 +23,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
-        android:layout_toEndOf="@+id/ib_backToStoriesList"
+        android:paddingStart="20dp"
         android:textAppearance="?attr/textAppearanceHeadline6"
         android:textSize="20sp"
-
-
-        />
+        tools:ignore="RtlSymmetry" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
