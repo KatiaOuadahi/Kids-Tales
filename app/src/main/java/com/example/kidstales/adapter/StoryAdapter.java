@@ -9,14 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.kidstales.R;
 import com.example.kidstales.ScenesActivity;
 import com.example.kidstales.model.Story;
 import com.example.kidstales.utils.FavoritesManager;
 import com.google.android.material.card.MaterialCardView;
+
 import java.util.List;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHolder> {

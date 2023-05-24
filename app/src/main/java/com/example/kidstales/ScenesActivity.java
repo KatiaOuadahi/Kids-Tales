@@ -24,6 +24,7 @@ public class ScenesActivity extends AppCompatActivity {
     ImageButton ibNextPage;
     ImageButton ibPrevPage;
     TextView pageNumberTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,34 +32,33 @@ public class ScenesActivity extends AppCompatActivity {
 
 
         /// Obtenir l'objet Story transmis depuis StoriesListActivity
-        Story story= (Story) getIntent().getSerializableExtra("Story");
+        Story story = (Story) getIntent().getSerializableExtra("Story");
 
 
         // Obtenir les scènes
         List<Scene> myScenes = story.getScenes();
 
         int storyTitle = story.getTitleResourceId();
-        title=findViewById(R.id.tv_title);
+        title = findViewById(R.id.tv_title);
         title.setText(storyTitle);
 
 
         // Configurer le ViewPager pour afficher les scènes de l'histoire
         viewPager = findViewById(R.id.viewPager);
-        scenesAdapter=new ScenesAdapter(ScenesActivity.this,myScenes);
+        scenesAdapter = new ScenesAdapter(ScenesActivity.this, myScenes);
         viewPager.setAdapter(scenesAdapter);
 
 
         // Revenir à StoriesListActivity lorsque ib_backToStoriesList est cliqué
-        ImageButton backToStoriesList=findViewById(R.id.ib_backToStoriesList);
-        backToStoriesList.setOnClickListener(v->{
+        ImageButton backToStoriesList = findViewById(R.id.ib_backToStoriesList);
+        backToStoriesList.setOnClickListener(v -> {
             Intent intent = new Intent(ScenesActivity.this, StoriesListActivity.class);
             startActivity(intent);
         });
 
 
-
         // Changer le numéro de la page actuelle
-        pageNumberTextView=findViewById(R.id.tv_PageNumber);
+        pageNumberTextView = findViewById(R.id.tv_PageNumber);
 
 
         // Définir le numéro de page initial ici
@@ -70,7 +70,8 @@ public class ScenesActivity extends AppCompatActivity {
         // Changer la page actuelle en faisant glisser (gauche/droite)
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
 
             @Override
             public void onPageSelected(int position) {
@@ -80,26 +81,23 @@ public class ScenesActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {}
+            public void onPageScrollStateChanged(int state) {
+            }
         });
 
 
-
-
-
-
         // Changer la page actuelle en cliquant sur le bouton image (précédent/suivant)
-        ibPrevPage=findViewById(R.id.ib_PrevPage);
-        ibNextPage=findViewById(R.id.ib_NextPage);
+        ibPrevPage = findViewById(R.id.ib_PrevPage);
+        ibNextPage = findViewById(R.id.ib_NextPage);
 
 
-        ibNextPage.setOnClickListener(v->{
-            int nextPage =viewPager.getCurrentItem() + 1;
+        ibNextPage.setOnClickListener(v -> {
+            int nextPage = viewPager.getCurrentItem() + 1;
             viewPager.setCurrentItem(nextPage);
         });
 
 
-        ibPrevPage.setOnClickListener(v->{
+        ibPrevPage.setOnClickListener(v -> {
             int prevPage = viewPager.getCurrentItem() - 1;
             viewPager.setCurrentItem(prevPage);
         });
