@@ -10,25 +10,25 @@ public class FavoritesManager {
     private final List<Story> favoriteStories;
 
     private FavoritesManager() {
-        favoriteStories = new ArrayList<>();
+        favoriteStories = new ArrayList<>(); // Initialisation de la liste des histoires favorites
     }
 
     public static FavoritesManager getInstance() {
         if (instance == null) {
-            instance = new FavoritesManager();
+            instance = new FavoritesManager(); // Création d'une seule instance de FavoritesManager
         }
         return instance;
     }
 
     public List<Story> getFavoriteStories() {
-        return favoriteStories;
+        return favoriteStories; // Renvoie la liste des histoires favorites
     }
 
     public void addFavoriteStory(Story story) {
-        favoriteStories.add(story);
+        favoriteStories.add(story); // Ajoute une histoire à la liste des favoris
     }
 
     public void removeFavoriteStory(Story story) {
-        favoriteStories.remove(story);
+        favoriteStories.remove(story); // Supprime une histoire de la liste des favoris
     }
 }

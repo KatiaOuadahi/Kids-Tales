@@ -13,16 +13,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        // Recherche du bouton dans la vue
         Button showAll = findViewById(R.id.btn_show_all);
 
-
-        //move to StoriesListActiviy when the btn_show_all button is clicked
+        // Définition du comportement lors du clic sur le bouton
         showAll.setOnClickListener(v -> {
+            // Création de l'intention de passer à l'activité StoriesListActivity
             Intent intent = new Intent(MainActivity.this, StoriesListActivity.class);
+            // Démarrage de l'activité StoriesListActivity
             startActivity(intent);
         });
-
-
     }
 }
