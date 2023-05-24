@@ -9,26 +9,25 @@
 
     <ImageButton
         android:id="@+id/ib_backToStoriesList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:background="?android:attr/selectableItemBackground"
         android:padding="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        tools:ignore="ContentDescription"
-        />
+        android:src="@drawable/ic_arrow_back"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/ib_backToStoriesList"
-        android:textSize="20sp"
-        android:layout_marginTop="19dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
-        android:textAppearance= "?attr/textAppearanceHeadline6"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@+id/ib_backToStoriesList"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textSize="20sp"
 
 
         />
@@ -37,10 +36,9 @@
         android:id="@+id/viewPager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="58dp"
         android:background="@color/white"
-        android:contentDescription="@string/contentDescription"
-        />
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv_PageNumber"
@@ -48,26 +46,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:textSize="20sp"
-        android:textAppearance= "?attr/textAppearanceHeadline6"
-        />
+        android:layout_marginBottom="32dp"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textSize="25sp" />
 
     <ImageButton
         android:id="@+id/ib_PrevPage"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/ic_baseline_arrow_back"
-        android:background="?android:attr/selectableItemBackground"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@id/tv_PageNumber"
         android:layout_marginBottom="25dp"
-        tools:ignore="ContentDescription" />
+        android:layout_toStartOf="@id/tv_PageNumber"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_baseline_arrow_back"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/ib_NextPage"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="25dp"
         android:layout_toEndOf="@id/tv_PageNumber"

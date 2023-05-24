@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         Button showAll = findViewById(R.id.btn_show_all);
 
 
-        //move to StoriesListActiviy when the btn_show_all button is clicked
+        // déplacer vers StoriesListActiviy lorsque le bouton btn_show_all est cliqué
         showAll.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, StoriesListActivity.class);
             startActivity(intent);
