@@ -1,32 +1,28 @@
 package com.example.kidstales.adapter;
 
+
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.kidstales.R;
 import com.example.kidstales.ScenesActivity;
 import com.example.kidstales.model.Story;
 import com.example.kidstales.utils.FavoritesManager;
 import com.google.android.material.card.MaterialCardView;
-
-import java.io.Serializable;
 import java.util.List;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHolder> {
 
     private final List<Story> stories;
-    private Context context;
+    private final Context context;
     private final int layoutResId;
     private final boolean isFavoriteActivity;
 
@@ -40,7 +36,8 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
     @NonNull
     @Override
     public StoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(layoutResId, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(layoutResId, parent, false);
         return new StoryViewHolder(itemView, stories, isFavoriteActivity);
     }
 
@@ -50,31 +47,26 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         holder.imageView.setImageResource(story.getCoverImage());
         holder.titleTextView.setText(story.getTitleResourceId());
 
-        if (holder.cardViewGrid != null) {
-            holder.cardViewGrid.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Démarrer ScenesActivity et transmettre l'histoire sélectionnée en extra
-                    Intent intent = new Intent(v.getContext(), ScenesActivity.class);
-                    intent.putExtra("Story", (Serializable) story);
-                    v.getContext().startActivity(intent);
 
-                    Log.d("MY_TAG_Adapter", "La première scène est : " + story.getScenes().get(0).getText());
-                }
+        // Définir l'action de clic sur la cardView lorsqu'elle est gérée par une GridView
+        if (holder.cardViewGrid != null) {
+            holder.cardViewGrid.setOnClickListener(v -> {
+
+                // Démarrer ScenesActivity et transmettre l'histoire sélectionnée en extra
+                Intent intent = new Intent(v.getContext(), ScenesActivity.class);
+                intent.putExtra("Story", story);
+                v.getContext().startActivity(intent);
             });
         }
-
+        // Définir l'action de clic sur la cardView lorsqu'elle est gérée par une ListView
         if (holder.cardViewList != null) {
-            holder.cardViewList.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Démarrer ScenesActivity et transmettre l'histoire sélectionnée en extra
-                    Intent intent = new Intent(v.getContext(), ScenesActivity.class);
-                    intent.putExtra("Story", (Serializable) story);
-                    v.getContext().startActivity(intent);
+            holder.cardViewList.setOnClickListener(v -> {
 
-                    Log.d("MY_TAG_Adapter", "La première scène est : " + story.getScenes().get(0).getText());
-                }
+                // Démarrer ScenesActivity et transmettre l'histoire sélectionnée en extra
+                Intent intent = new Intent(v.getContext(), ScenesActivity.class);
+                intent.putExtra("Story", story);
+                v.getContext().startActivity(intent);
+
             });
         }
 
@@ -106,7 +98,9 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
             favoriteButton = itemView.findViewById(R.id.ib_favorite);
             cardViewGrid = itemView.findViewById(R.id.Story_card_grid);
             cardViewList = itemView.findViewById(R.id.Story_card_liste);
+
             this.stories = stories;
+
 
             if (isFavoriteActivity) {
                 favoriteButton.setVisibility(View.GONE); // Masquer le bouton favori
@@ -134,5 +128,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
                 });
             }
         }
+
+
     }
 }
